@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+.spm-page {
+  font-family: "Manrope", sans-serif;
+  background-color: #0a0a0a;
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 8rem;
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -0.25rem;
+  }
+
+  a,
+  p {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 0.9;
+    user-select: none;
+  }
+
+  .spm-nav {
+    position: fixed;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 2;
+  }
+
+  .spm-logo,
+  .spm-menu-toggler {
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  .spm-logo {
+    width: 4rem;
+  }
+
+  .spm-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100svh;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #1a1a1a;
+    pointer-events: none;
+    opacity: 0;
+    will-change: opacity;
+    z-index: 1;
+  }
+
+  .spm-menu-overlay canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100svh;
+  }
+
+  .spm-menu-links {
+    position: relative;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .spm-menu-item a {
+    width: max-content;
+    color: #4d4d4d;
+    font-size: 4rem;
+    line-height: 1;
+    background: linear-gradient(#fff, #fff) left no-repeat, #4d4d4d;
+    background-size: 0% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .spm-hero {
+    position: relative;
+    width: 100vw;
+    height: 100svh;
+    padding: 2rem;
+    display: flex;
+    align-items: flex-end;
+    background: url(/images/silver-pinewood-menu/hero.jpg) no-repeat 50% 50%;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  .spm-hero h1 {
+    width: 75%;
+    color: #fff;
+  }
+
+  @media (max-width: 1000px) {
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 0;
+    }
+
+    .spm-hero h1 {
+      width: 100%;
+    }
+
+    .spm-menu-links {
+      width: 100%;
+      padding: 2rem;
+    }
+
+    .spm-menu-item a {
+      font-size: 2.5rem;
+    }
+  }
+}

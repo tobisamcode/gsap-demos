@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+
+.split-card-intro,
+.split-card-outro,
+.split-card-sticky {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  padding: 2rem;
+  background-color: #0f0f0f;
+  color: #fff;
+  font-family: "Instrument Serif", serif;
+}
+
+.split-card-intro,
+.split-card-outro {
+  text-align: center;
+  align-content: center;
+
+  h1 {
+    width: 30%;
+    margin: 0 auto;
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+}
+
+.split-card-sticky {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.split-card-sticky-header {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  h1 {
+    position: relative;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 1;
+    will-change: transform, opacity;
+    transform: translateY(40px);
+    opacity: 0;
+  }
+}
+
+.split-card-container {
+  position: relative;
+  width: 75%;
+  display: flex;
+  perspective: 1000px;
+  transform: translateY(40px);
+  will-change: width;
+}
+
+.split-card {
+  position: relative;
+  flex: 1;
+  aspect-ratio: 5/7;
+  transform-style: preserve-3d;
+  transform-origin: top;
+}
+
+.split-card-front,
+.split-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.split-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.split-card-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: rotateY(180deg);
+  padding: 2rem;
+
+  span {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    opacity: 0.4;
+  }
+
+  p {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+}
+
+.split-card-back-1 {
+  background-color: #b2b2b2;
+  color: #0f0f0f;
+}
+
+.split-card-back-2 {
+  background-color: #ce2017;
+}
+
+.split-card-back-3 {
+  background-color: #2f2f2f;
+}
+
+@media (max-width: 1000px) {
+  .split-card-intro h1,
+  .split-card-outro h1,
+  .split-card-sticky-header h1 {
+    font-size: 3rem;
+  }
+
+  .split-card-intro h1,
+  .split-card-outro h1 {
+    width: 100%;
+  }
+
+  .split-card-sticky {
+    height: max-content;
+    padding: 4rem 2rem;
+    flex-direction: column;
+  }
+
+  .split-card-sticky-header {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-bottom: 4rem;
+
+    h1 {
+      opacity: 1;
+    }
+  }
+
+  .split-card-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .split-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 20px !important;
+  }
+
+  .split-card-back {
+    transform: none;
+  }
+}

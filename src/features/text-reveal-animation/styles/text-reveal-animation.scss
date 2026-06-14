@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap");
+
+.text-reveal-page {
+  background-color: #fff;
+  color: #000;
+  font-family: "Manrope", sans-serif;
+
+  h1 {
+    text-transform: none;
+  }
+
+  [data-copy-wrapper="true"] {
+    display: contents;
+  }
+}
+
+#smooth-wrapper,
+#smooth-content {
+  background-color: #fff;
+}
+
+.text-reveal-page {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 500;
+    letter-spacing: -0.05rem;
+    line-height: 1;
+  }
+
+  p {
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 1em;
+  }
+
+  span {
+    color: #000;
+    display: block;
+    text-transform: uppercase;
+    font-family: "DM Mono", monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+}
+
+.text-reveal-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  padding: 1.5em 2em;
+  z-index: 2;
+
+  .text-reveal-col:nth-child(1) {
+    display: flex;
+  }
+
+  .text-reveal-col:nth-child(2) {
+    text-align: right;
+  }
+
+  span {
+    color: #909090;
+    mix-blend-mode: difference;
+  }
+}
+
+.text-reveal-col,
+.text-reveal-sub-col {
+  flex: 1;
+}
+
+section[class^="text-reveal-"] {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  padding: 2em;
+}
+
+.text-reveal-hero,
+.text-reveal-about-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-reveal-hero-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.text-reveal-hero .text-reveal-header {
+  position: relative;
+  z-index: 1;
+  width: 50%;
+  text-align: center;
+
+  h1 {
+    color: #909090;
+  }
+}
+
+.text-reveal-about-img {
+  height: max-content;
+  padding: 8em 2em;
+
+  img {
+    width: 20%;
+    aspect-ratio: 4 / 5;
+  }
+}
+
+.text-reveal-about,
+.text-reveal-philosophy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.text-reveal-philosophy {
+  background-color: #202020;
+
+  h1,
+  span {
+    color: #fff;
+  }
+}
+
+.text-reveal-about h1,
+.text-reveal-philosophy h1 {
+  text-indent: 25%;
+}
+
+.text-reveal-story {
+  height: max-content;
+  display: flex;
+  gap: 1em;
+  margin-bottom: 8em;
+  background-color: #fff;
+}
+
+.text-reveal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1em;
+  padding: 6em 2em 1.5em;
+  background-color: #fff;
+
+  .text-reveal-col {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .text-reveal-sub-col {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.line {
+  transform: translateY(100%);
+  will-change: transform;
+}
+
+@media (max-width: 900px) {
+  .text-reveal-page h1 {
+    font-size: 2rem;
+  }
+
+  .text-reveal-nav .text-reveal-col:nth-child(1) .text-reveal-sub-col:nth-child(2) {
+    display: none;
+  }
+
+  .text-reveal-hero .text-reveal-header {
+    width: 95%;
+  }
+
+  .text-reveal-about-img img {
+    width: 100%;
+  }
+
+  .text-reveal-story {
+    flex-direction: column;
+  }
+
+  .text-reveal-footer .text-reveal-col:nth-child(1) {
+    flex-direction: column-reverse;
+    gap: 4em;
+  }
+
+  .text-reveal-footer .text-reveal-col:nth-child(2) {
+    display: none;
+  }
+}

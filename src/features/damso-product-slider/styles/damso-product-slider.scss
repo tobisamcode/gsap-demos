@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+.damso-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #fff;
+  color: #000;
+  font-family: "DM Sans", sans-serif;
+}
+
+.damso-nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+  z-index: 4;
+
+  p {
+    text-transform: uppercase;
+    font-family: "DM Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+}
+
+.damso-product-name p {
+  color: #999;
+}
+
+.damso-gallery {
+  position: absolute;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.damso-products {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+
+  li {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    will-change: transform;
+
+    img {
+      width: 250px;
+      height: 250px;
+      object-fit: contain;
+    }
+  }
+}
+
+.damso-controller {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 11rem;
+  height: 11rem;
+  user-select: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.damso-controller-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5rem;
+  height: 5rem;
+  background: #343434;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: circle(40% at 50% 50%);
+  will-change: clip-path;
+  cursor: pointer;
+  z-index: 1;
+  border: none;
+}
+
+.damso-close-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transform-origin: center;
+
+    &:first-child {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &:last-child {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+.damso-controller-outer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #212121;
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  will-change: clip-path;
+  z-index: -1;
+}
+
+.damso-controller-label p {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  font-family: "DM Mono", monospace;
+  color: #fff;
+  will-change: opacity;
+}
+
+.damso-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #fff;
+  will-change: opacity;
+  cursor: pointer;
+
+  svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  &.damso-nav-btn-prev {
+    left: 1rem;
+  }
+
+  &.damso-nav-btn-next {
+    right: 1rem;
+  }
+
+  &.disabled {
+    opacity: 0.25;
+    pointer-events: none;
+  }
+}
+
+.damso-product-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.25);
+  }
+}
+
+.damso-product-preview {
+  position: absolute;
+  top: 47.5%;
+  left: 50%;
+  width: 30%;
+  height: 75%;
+  padding: 2rem 1rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 3;
+  color: #000;
+}
+
+.damso-product-preview-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.damso-product-preview-name p {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #000;
+}
+
+.damso-product-preview-tag {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #000;
+  color: #fff;
+
+  p {
+    text-transform: uppercase;
+    font-family: "DM Mono", monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+}
+
+.damso-product-preview-img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.damso-btn {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+
+  a {
+    display: block;
+    width: 100%;
+    padding: 1rem 0;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 1000px) {
+  .damso-product-preview {
+    width: calc(100% - 2rem);
+  }
+}

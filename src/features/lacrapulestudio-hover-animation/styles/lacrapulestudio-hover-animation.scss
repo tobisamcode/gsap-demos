@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+.lacrapule-page {
+  background-color: #fff;
+  color: #000;
+  font-family: "DM Sans", sans-serif;
+  min-height: 100svh;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1;
+    color: #fff;
+    text-transform: none;
+  }
+
+  p,
+  a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "DM Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 550;
+    line-height: 1;
+    display: inline-block;
+  }
+}
+
+.lacrapule-nav,
+.lacrapule-footer {
+  position: fixed;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  mix-blend-mode: difference;
+  z-index: 2;
+}
+
+.lacrapule-nav-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.lacrapule-footer {
+  bottom: 0;
+}
+
+.lacrapule-clients {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 2rem;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.lacrapule-clients-preview {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.lacrapule-client-img-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  will-change: clip-path;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform, opacity;
+  }
+}
+
+.lacrapule-clients-header p {
+  position: relative;
+  color: #acacac;
+  z-index: 1;
+}
+
+.lacrapule-clients-list {
+  position: relative;
+  width: 80%;
+  margin-bottom: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  mix-blend-mode: difference;
+  z-index: 2;
+}
+
+.lacrapule-client-name {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.15rem;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 300ms ease-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@media (max-width: 1000px) {
+  .lacrapule-page h1 {
+    font-size: 2rem;
+  }
+
+  .lacrapule-clients-preview {
+    width: 100%;
+    height: 100%;
+  }
+
+  .lacrapule-clients-list {
+    width: 100%;
+  }
+}

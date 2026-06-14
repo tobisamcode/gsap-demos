@@ -1,0 +1,280 @@
+.pom-page {
+  --pom-bg: #171717;
+  --pom-fg: #fff;
+  --pom-menu-bg: #0f0f0f;
+  --pom-menu-fg-secondary: #5f5f5f;
+  --pom-hamburger-icon-border: rgba(255, 255, 255, 0.1);
+
+  font-family: "PP Neue Montreal", "Inter", sans-serif;
+  background-color: var(--pom-bg);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  h1 {
+    font-size: 7.5rem;
+    font-weight: 500;
+    letter-spacing: -0.2rem;
+    line-height: 1;
+    text-transform: none;
+    color: var(--pom-fg);
+  }
+
+  p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--pom-fg);
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+}
+
+.pom-container {
+  position: relative;
+  transform: translateY(0svh);
+  background-color: var(--pom-bg);
+  color: var(--pom-fg);
+  will-change: transform;
+
+  section {
+    position: relative;
+    width: 100vw;
+    height: 100svh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: -1;
+
+    h1 {
+      width: 75%;
+    }
+
+    img {
+      opacity: 0.5;
+    }
+  }
+}
+
+.pom-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.pom-menu-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: all;
+  color: var(--pom-menu-fg-secondary);
+  z-index: 2;
+}
+
+.pom-menu-logo {
+  width: 2rem;
+  height: 2rem;
+}
+
+.pom-menu-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.pom-menu-toggle-label {
+  overflow: hidden;
+
+  p {
+    position: relative;
+    transform: translateY(0%);
+    will-change: transform;
+    color: var(--pom-fg);
+    font-size: 1rem;
+  }
+}
+
+.pom-menu-hamburger-icon {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid var(--pom-hamburger-icon-border);
+  border-radius: 100%;
+
+  span {
+    position: absolute;
+    width: 15px;
+    height: 1.25px;
+    background-color: var(--pom-fg);
+    transition: all 0.75s cubic-bezier(0.87, 0, 0.13, 1);
+    transform-origin: center;
+    will-change: transform;
+
+    &:nth-child(1) {
+      transform: translateY(-3px);
+    }
+
+    &:nth-child(2) {
+      transform: translateY(3px);
+    }
+  }
+
+  &.active span:nth-child(1) {
+    transform: translateY(0) rotate(45deg) scaleX(1.05);
+  }
+
+  &.active span:nth-child(2) {
+    transform: translateY(0) rotate(-45deg) scaleX(1.05);
+  }
+}
+
+.pom-menu-overlay,
+.pom-menu-overlay-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  color: var(--pom-fg);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.pom-menu-overlay {
+  background-color: var(--pom-menu-bg);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  will-change: clip-path;
+}
+
+.pom-menu-overlay-content {
+  display: flex;
+  transform: translateY(-50%);
+  will-change: transform;
+  pointer-events: all;
+}
+
+.pom-menu-media-wrapper {
+  flex: 2;
+  opacity: 0;
+  will-change: opacity;
+
+  img {
+    opacity: 0.25;
+  }
+}
+
+.pom-menu-content-wrapper {
+  flex: 3;
+  position: relative;
+  display: flex;
+}
+
+.pom-menu-content-main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pom-menu-footer {
+  margin: 0 auto;
+}
+
+.pom-menu-content-main,
+.pom-menu-footer {
+  width: 75%;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+.pom-menu-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &:nth-child(1) {
+    flex: 3;
+  }
+
+  &:nth-child(2) {
+    flex: 2;
+  }
+}
+
+.pom-menu-link a {
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.pom-menu-tag a,
+.pom-menu-footer p {
+  color: var(--pom-menu-fg-secondary);
+}
+
+.pom-line {
+  position: relative;
+  will-change: transform;
+}
+
+@media (max-width: 1000px) {
+  .pom-page h1 {
+    font-size: 3rem;
+    letter-spacing: -0.05rem;
+  }
+
+  .pom-container section h1 {
+    width: 100%;
+  }
+
+  .pom-menu-media-wrapper {
+    display: none;
+  }
+
+  .pom-menu-content-main,
+  .pom-menu-footer {
+    width: 100%;
+  }
+
+  .pom-menu-content-main {
+    top: 50%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5rem;
+  }
+
+  .pom-menu-link a {
+    font-size: 3rem;
+  }
+
+  .pom-menu-tag a {
+    font-size: 1.25rem;
+  }
+}
