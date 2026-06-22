@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap");
+
+.mm-spotlight {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  background: #0f0f0f;
+
+  h1 {
+    text-transform: none;
+    font-family: "Instrument Serif", serif;
+    font-size: 6rem;
+    font-weight: 500;
+    line-height: 0.9;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  p {
+    font-family: "Instrument Sans", sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 1.25;
+  }
+
+  .mm-nav,
+  .mm-footer {
+    position: absolute;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #7a7a7a;
+    z-index: 1;
+  }
+
+  .mm-nav {
+    top: 0;
+  }
+
+  .mm-nav p {
+    font-family: "Instrument Serif", serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+  .mm-footer {
+    bottom: 0;
+  }
+
+  .mm-footer p {
+    text-align: center;
+    font-size: 0.6rem;
+    width: 30%;
+  }
+
+  .mm-marquee {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    will-change: transform;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .mm-marquee-track {
+    display: flex;
+    flex-shrink: 0;
+    will-change: transform;
+  }
+
+  .mm-marquee-item {
+    flex-shrink: 0;
+    width: 18rem;
+    padding: 0 0.5rem;
+  }
+
+  .mm-marquee-item img {
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+    background: #ddd;
+  }
+
+  .mm-content-wrapper {
+    position: relative;
+    width: 30%;
+    height: 100%;
+    padding-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 auto;
+    color: #fff;
+    mix-blend-mode: difference;
+    z-index: 2;
+  }
+
+  .mm-content-wrapper h1 {
+    text-align: center;
+    width: 15rem;
+  }
+
+  .mm-content-wrapper h3 {
+    width: 20rem;
+    text-align: center;
+  }
+
+  .mm-copy {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .mm-copy p:nth-child(1) {
+    text-align: right;
+  }
+
+  .mm-line {
+    position: relative;
+    white-space: nowrap;
+    will-change: transform;
+  }
+
+  @media (max-width: 1000px) {
+    h1 {
+      font-size: 4rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    .mm-footer p {
+      width: 100%;
+    }
+
+    .mm-content-wrapper {
+      width: 100%;
+      padding: 2rem;
+    }
+  }
+}
