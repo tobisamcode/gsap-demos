@@ -99,6 +99,10 @@ export const demoLinks: DemoLink[] = [
     label: "Hero Gallery",
     href: "/hero-gallery",
   },
+  {
+    label: "Outfit Landing Page Reveal",
+    href: "/outfit-landing-page-reveal",
+  },
 ].map((demo) => ({
   ...demo,
   image: `/images/home${demo.href}.png`,
