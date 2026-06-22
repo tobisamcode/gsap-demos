@@ -95,6 +95,10 @@ export const demoLinks: DemoLink[] = [
     label: "KPVERSE Menu",
     href: "/kpverse-menu",
   },
+  {
+    label: "Hero Gallery",
+    href: "/hero-gallery",
+  },
 ].map((demo) => ({
   ...demo,
   image: `/images/home${demo.href}.png`,
