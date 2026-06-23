@@ -107,6 +107,10 @@ export const demoLinks: DemoLink[] = [
     label: "Magnetic Marquee",
     href: "/magnetic-marquee",
   },
+  {
+    label: "Gallery Awwwards Rebuild",
+    href: "/gallery-awwwards-rebuild",
+  },
 ].map((demo) => ({
   ...demo,
   image: `/images/home${demo.href}.png`,
