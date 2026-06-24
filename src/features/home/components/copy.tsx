@@ -55,6 +55,11 @@ export default function Copy({
 
         gsap.set(lines, { y: "100%" });
 
+        // The wrapper starts hidden (see JSX) so the fully-visible text is
+        // never painted before the lines are masked off-screen. Now that the
+        // split + initial offset are in place, it's safe to reveal it.
+        container.style.visibility = "visible";
+
         const animationProps = {
           y: "0%",
           duration: 1,
@@ -94,7 +99,11 @@ export default function Copy({
   }, [animateOnScroll, delay]);
 
   return (
-    <div ref={containerRef} data-copy-wrapper="true">
+    <div
+      ref={containerRef}
+      data-copy-wrapper="true"
+      style={{ visibility: "hidden" }}
+    >
       {children}
     </div>
   );
