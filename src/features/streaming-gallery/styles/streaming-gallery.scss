@@ -1,0 +1,75 @@
+.sg-page {
+  background-color: #000;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sg-section {
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 4.5rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .sg-gallery {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sg-images {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .sg-floating-image {
+    position: absolute;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .sg-floating-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sg-hero {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 64rem;
+    padding: 0 1.5rem;
+    pointer-events: auto;
+  }
+
+  .sg-hero h1 {
+    text-transform: none;
+    font-size: 4.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 0.95;
+    color: #000;
+    text-align: left;
+  }
+
+  @media (min-width: 768px) {
+    .sg-hero h1 {
+      font-size: 92px;
+      text-align: center;
+    }
+  }
+}
