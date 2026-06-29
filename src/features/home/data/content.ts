@@ -111,6 +111,14 @@ export const demoLinks: DemoLink[] = [
     label: "Gallery Awwwards Rebuild",
     href: "/gallery-awwwards-rebuild",
   },
+  {
+    label: "Streaming Gallery",
+    href: "/streaming-gallery",
+  },
+  {
+    label: "LukeBaffait Animated Footer",
+    href: "/lukebaffait-animated-footer",
+  },
 ].map((demo) => ({
   ...demo,
   image: `/images/home${demo.href}.png`,
