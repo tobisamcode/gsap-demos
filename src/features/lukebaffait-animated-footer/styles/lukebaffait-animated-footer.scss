@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+
+.lbf-page {
+  font-family: "Instrument Sans", sans-serif;
+
+  .lbf-section {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100svh;
+    background-color: #1b1b1b;
+    color: #ff6a00;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .lbf-section h1 {
+    font-size: clamp(2rem, 5vw, 8rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  .lbf-footer-revealer {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+  }
+
+  footer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100svh;
+    background-color: #0f0f0f;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .lbf-footer-images {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .lbf-footer-hand-img {
+    position: relative;
+    width: 40%;
+    min-width: 200px;
+    will-change: transform;
+  }
+
+  .lbf-footer-hand-img img {
+    display: block;
+    width: 100%;
+    opacity: 0;
+  }
+
+  .lbf-footer-hand-img canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .lbf-footer-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    color: #fff;
+  }
+
+  .lbf-footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .lbf-footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+
+  .lbf-footer-text {
+    max-width: 28rem;
+  }
+
+  .lbf-footer-text p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .lbf-footer-header {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: #fff;
+  }
+
+  .lbf-footer-header h1 {
+    font-size: clamp(3rem, 9vw, 9rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    overflow: hidden;
+  }
+
+  @media (max-width: 1000px) {
+    .lbf-footer-content {
+      flex-direction: column;
+    }
+
+    .lbf-footer-text {
+      max-width: 100%;
+    }
+
+    .lbf-footer-header h1 {
+      font-size: 3rem;
+    }
+  }
+}
